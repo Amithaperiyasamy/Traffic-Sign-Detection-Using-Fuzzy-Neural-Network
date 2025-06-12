@@ -415,11 +415,3 @@ traffic_sign_classifier_LeNet_enhanced_trainingdataset_white.ipynb
 traffic_sign_classifier_LeNet_HSL_ft_Conv_f1x1.ipynb  
 traffic_sign_classifier_ResNet_HSL_ft_Conv_f1x1.ipynb  
 
-**-[x] Object detection tutorial**  
-I will work on another tutorial for object detection and localization, please stay tuned and follow my linkedin or my medium or my github for updates.  
-
-Linkedin __| linkedin.com/in/phuc-thien-nguyen  
-
-Medium __| nguyenrobot.medium.com  
-
-Github ____| github.com/nguyenrobot
