@@ -28,6 +28,8 @@ import cv2
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
+
+
 Step 2: Preprocessing the Image
 def preprocess_image(image_path):
     img = cv2.imread(image_path)
@@ -35,6 +37,8 @@ def preprocess_image(image_path):
     blurred = cv2.GaussianBlur(resized, (5, 5), 0)
     hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
     return hsv, resized
+
+    
 Step 3: Traffic Sign Detection (Color and Shape Based)
 def detect_red_signs(hsv_img):
     # Red color range in HSV
@@ -48,6 +52,8 @@ def detect_red_signs(hsv_img):
     mask = mask1 | mask2
 
     return mask
+
+    
 Step 4: Feature Extraction for Fuzzy Neural Network Input
 def extract_features(mask, original_img):
     contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -61,6 +67,8 @@ def extract_features(mask, original_img):
             aspect_ratio = float(w)/h
             features.append((area, len(approx), aspect_ratio))  # e.g., area, number of sides, aspect ratio
     return features
+
+    
 Step 5: Define Fuzzy Inference System
 # Define fuzzy variables
 area = ctrl.Antecedent(np.arange(0, 5000, 1), 'area')
@@ -95,6 +103,8 @@ rules = [
 
 sign_ctrl = ctrl.ControlSystem(rules)
 sign_detector = ctrl.ControlSystemSimulation(sign_ctrl)
+
+
 Step 6: Apply Fuzzy Inference
 def classify_signs(features):
     for f in features:
@@ -112,6 +122,8 @@ def classify_signs(features):
             print("Detected: SPEED LIMIT Sign")
         else:
             print("Unknown Sign")
+
+            
 Step 7: Putting It All Together
 if __name__ == "__main__":
     hsv_img, original_img = preprocess_image("traffic.jpg")
