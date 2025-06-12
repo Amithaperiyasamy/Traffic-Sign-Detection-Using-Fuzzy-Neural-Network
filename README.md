@@ -10,18 +10,7 @@ The goals of this project are the following:
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
 * Summarize the results
-
-*Author : nguyenrobot*  
-*Copyright : nguyenrobot*  
-https://github.com/nguyenrobot  
-https://www.nguyenrobot.com  
-
-*Current github repos*  
-https://github.com/nguyenrobot/Traffic-Sign-Recognition-with-Keras-Tensorflow  
-
-*Medium article*
-https://nguyenrobot.medium.com/build-a-traffic-sign-recognition-with-keras-tensorflow-7c01f093f3df  
-
+  
 *Jupyter notebooks*  
 traffic_sign_classifier_LeNet.ipynb  
 traffic_sign_classifier_GoogLeNet.ipynb  
@@ -75,8 +64,7 @@ A basic convolutional filter that we may have seen many times is Sobel operator 
 
 In deep learning, convolutional filters are randomly initialized at the beginning then gradually get updated thank to back-propagation algorithms in the training phase.  
 
-Please check my previous tutorial for Sobel and its applications in line-detection here :
-https://github.com/nguyenrobot/lane_detection_advanced_sliding_windows
+Please check my previous tutorial for Sobel and its applications in line-detection here
 
 #### 2. Neurons in neural networks
 A neural network could be considered as a weighted multi-voting system where each neuron takes votes from previous’ layer’s neurons or from the inputs.  
@@ -90,8 +78,6 @@ _logit < 0 : NO answer, lower the logit the neuron is more sure about its ‘NO�
 *Neural network &#8595;*  
 <img src="figures/neuron.png" alt="Drawing" style="width: 350px;"/>
 
->Source : nguyenrobot
-
 Why called deep-learning ? When a neural network has many hidden (intermediate) layer, it's called deep neural network (DNN). Usually, end-user doesn't need to see intermediate layers results, so for them, it's some kind of black-box or deep learning.  
 
 #### 3. Softmax activation
@@ -101,15 +87,10 @@ Without softmax activation, we get logits at the outputs of a neural network whi
 *Wihout softmax activation &#8595;*  
 <img src="figures/softmax_without.png" alt="Drawing" style="width: 350px;"/>
 
->Source : nguyenrobot
-
 However, logits are very abstract we need to convert them to probabilities summing up to 1. So, the softmax activation is here to figure out probabilities that the input could belong to a class.  
 
 *Softmax activation & probabilities &#8595;*  
 <img src="figures/softmax_with.png" alt="Drawing" style="width: 550px;"/>
-
->Source : nguyenrobot
-
 #### 4. ReLU activation function  
 The ReLU activation function is widely used in deep learning. ReLU gets passed ‘YES’ answer of a neuron and neutralize other types of answer.  
 The ReLu actionvation is really simple defined as : f(x)=max(0,x)  
@@ -117,7 +98,7 @@ The ReLu actionvation is really simple defined as : f(x)=max(0,x)
 *ReLU activation function definition &#8595;*  
 <img src="figures/relu_def.png" alt="Drawing" style="width: 350px;"/>
 
->Source : [analyticsvidhya](https://www.analyticsvidhya.com/blog/2020/01/fundamentals-deep-learning-activation-functions-when-to-use-them)
+(https://www.analyticsvidhya.com/blog/2020/01/fundamentals-deep-learning-activation-functions-when-to-use-them)
 
 ReLU helps the Model to have :  
 [x] Non linear behaviour & Multi-classes classification capacity
@@ -129,7 +110,7 @@ ReLU helps the Model to have :
 *ReLU activation in action &#8595;*  
 <img src="figures/relu_action.png" alt="Drawing" style="width: 550px;"/>
 
->Source : nguyenrobot
+
 
 Sometimes, Leaky ReLU is used to do not completely cut the link between groups of neurons because in practice, neurons' groups are not completely independent grouped into A, B, C.. groups for the classifying process.    
 
@@ -138,21 +119,15 @@ When human does computer vision, we start by picking some well-known operations,
 *Human does computer vision &#8595;*  
 <img src="figures/human_CV.png" alt="Drawing" style="width: 550px;"/>
 
->Source : nguyenrobot
+
 
 With Deep Learning, human firstly chooses an architecture then all the parameters are randomly initialized in the beginning of the training phase.  
 As an example in computer vision, the input is a vector of all pixel called X, the output is a vector of logits corresponding to classes called Z. The vector of labels is Y (1 0 0.. if the current image belongs to class 1).  
 
 *Deep learning does computer vision &#8595;*  
 <img src="figures/deep_CV.png" alt="Drawing" style="width: 550px;"/>
-
->Source : nguyenrobot
-
 *Gradient descent &#8595;*  
 <img src="figures/back_propagation.png" alt="Drawing" style="width: 650px;"/>
-
->Source : nguyenrobot
-
 Gradient Descent is the most used method to get Neural Networks updated during the training phase.  
 *In predicting phase :  
 [x] z = f(X,P)  
@@ -209,19 +184,11 @@ Generally, we normalize data to get them centre around 0 and to have standard de
 
 >Source : [Traffic Sign Recognition with Multi-Scale Convolutional Networks](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) by Pierre Sermanet and Yann LeCun in 1998
 
-The original LeNet is used for hand-writing digits classification which does have just 10 classes. So to work well with our traffic signs having 43 classes, I lightly changed the depth of the original LeNet architecture.  
-
-* GoogLeNet
-
+The original LeNet is used for hand-writing digits classification which does have just 10 classes. So to work well with our traffic signs having 43 classes, I lightly changed the depth of the original LeNet architecture. 
 <img src="figures/GoogLeNet_compact.png" alt="Drawing" style="width: 450px;"/>
-
->Source : Aurélien Géron, "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow", page 466-468, Figure 14-13 and 14-14.
-
-* ResNet  
 
 <img src="figures/resnet_34_compact.png" alt="Drawing" style="width: 450px;"/>
 
->Source : Aurélien Géron, "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow", page 471, Figure 14-17.
 
 #### 3. Train the model
 
@@ -236,7 +203,6 @@ Here is an example of augmented input :
 *Data augmentation, example for a 60kmph limit sign &#8595;*  
 <img src="figures/data_augmentation_ex.jpg" alt="Drawing" style="width: 650px;"/>
 
->Source : nguyenrobot
 
 ## Test the model on validation dataset & the test dataset
 Normally, we can use 1/3 of our labelled dataset for cross-validation.  
@@ -246,7 +212,7 @@ Normally, we can use 1/3 of our labelled dataset for cross-validation.
 *Prediction accuracyof original architectures &#8595;*  
 <img src="figures/accuracy_original.png" alt="Drawing" style="width: 750px;"/>
 
->Source : nguyenrobot
+
 
 We need to get 93-95% of validation accuracy at least to be considered as a robust classifier. With `LeNet`, `GoogLeNet` and `ResNet` original architectures, we nearly achieve the objective.  
 `LeNet` :  originally, LeNet architecture is invented for handwritten-numbers recognition, it's not perfectly adapt for traffic signs classification  
@@ -268,7 +234,7 @@ Here are some extractions of confusion matrices for test dataset of 12630 sample
 *confusion matrix, ResNet 34 &#8595;*  
 <img src="figures/confusion_matrix_resnet34.png" alt="Drawing" style="width: 650px;"/>
 
->Source : nguyenrobot
+
 
 
 ## Test the Model on new images
@@ -318,12 +284,10 @@ Taking the idea of skip connections in Residual Units of ResNet architecture, I 
 *LeNet ft. skip-connections & full convoluional filter &#8595;*  
 <img src="figures/archi_LeNet_improved.png" alt="Drawing" style="width: 350px;"/>
 
->Source : nguyenrobot
+
 
 *GoogLeNet ft. skip-connections & full convoluional filter &#8595;*  
 <img src="figures/archi_GoogLeNet_improved.png" alt="Drawing" style="width: 350px;"/>
-
->Source : nguyenrobot
 
 *ResNet ft. skip-connections & full convolutional filter &#8595;*  
 <img src="figures/archi_ResNet_improved.png" alt="Drawing" style="width: 350px;"/>
@@ -335,7 +299,7 @@ The prediction accuracy is sharply improved with this tweak. At each stage of th
 *Prediction accuracy of improved architectures &#8595;*  
 <img src="figures/accuracy_improved.png" alt="Drawing" style="width: 750px;"/>
 
->Source : nguyenrobot
+
 
 #### 2. Enhancements in preprocesssing
 *HSL color-space  
@@ -357,8 +321,6 @@ Trying to remediate HLS overfitting issue, I applied a convolutional layer at si
 *HLS_ft_Conv_1x1 vs Y(UV) in classification accuracy &#8595;*  
 <img src="figures/accuracy_LeNet_HLS_ft_Conv_1x1.png" alt="Drawing" style="width: 750px;"/>
 
->Source : nguyenrobot
-
 In contrary to my intention, the model is even more over-fitted so the classification accuracy on test dataset dramatically falls from 95,7% to 40% !  
 
 So for classification problems, we understand that why in the original paper of [LeNet architecture](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), the authors only used Y channel from YUV color-space.  
@@ -372,7 +334,7 @@ Intrigued by the question `what if we use soft activation in the last layer to g
 
 <img src="figures/enhanced_training_dataset_white.png" alt="Drawing" style="width: 350px;"/>
 
->Source : nguyenrobot
+
 
 However, these enhancements don't give any better outcome.  
 
@@ -387,7 +349,7 @@ In deep learning, there is no perfect model. For each problem, we need to tweak,
 *Visualization of some layers &#8595;*  
 <img src="figures/visualization_layer.png" alt="Drawing" style="width: 750px;"/>
 
->Source : nguyenrobot
+
 
 A simple visualization could help us to see if a layer extracts enough details or not then we can adjust their depth.  
 
@@ -397,16 +359,16 @@ A simple visualization could help us to see if a layer extracts enough details o
 *Original architectures* :  
 `LeNet` traffic_sign_classifier_LeNet.ipynb without softmax activation in last layer, accuracy on test dataset of 91%  
 
-`GoogLeNet` traffic_sign_classifier_GoogLeNet.ipynb with softmax activation in last layer, accuracy on test dataset of 92,46%  
+traffic_sign_classifier_GoogLeNet.ipynb with softmax activation in last layer, accuracy on test dataset of 92,46%  
 
-`ResNet` traffic_sign_classifier_ResNet.ipynb with softmax activation in last layer, accuracy on test dataset of 93,98%  
+traffic_sign_classifier_ResNet.ipynb with softmax activation in last layer, accuracy on test dataset of 93,98%  
 
 *Improved architectures* :  
 `LeNet improved` traffic_sign_classifier_LeNet_improved.ipynb without softmax activation in last layer, accuracy on test dataset of 95,47%  
 
-`GoogLeNet improved` traffic_sign_classifier_GoogLeNet_improved.ipynb with softmax activation in last layer, accuracy on test dataset of 94,58%  
+traffic_sign_classifier_GoogLeNet_improved.ipynb with softmax activation in last layer, accuracy on test dataset of 94,58%  
 
-`ResNet improved` traffic_sign_classifier_ResNet_improved.ipynb with softmax activation in last layer, accuracy on test dataset of 95,76%  
+traffic_sign_classifier_ResNet_improved.ipynb with softmax activation in last layer, accuracy on test dataset of 95,76%  
 
 *Tries on HLS color-space and dataset enhancements * :  
 traffic_sign_classifier_LeNet_enhanced_trainingdataset.ipynb  
