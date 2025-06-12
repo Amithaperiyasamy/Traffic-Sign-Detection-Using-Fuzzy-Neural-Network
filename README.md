@@ -1,4 +1,4 @@
-Traffic Sign Detection Using Fuzzy Neutral Network
+TRAFFIC SIGN DETECTION USING FUZZY NEURAL NETWORK
 
 This project combines fuzzy logic and neural networks to improve the accuracy and robustness of traffic sign detection systems. Below is a concise preview or overview of such as:
 
